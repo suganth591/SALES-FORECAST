@@ -1,0 +1,17 @@
+<div class="container-fluid bg-light text-dark" style="height:600px;color:gainsboro">
+  <h1><b>My Reports</b></h1><br><hr>
+  <ng-container *ngIf="retstatic().length>0;then notnull;else empty"></ng-container>
+  <ng-template #empty>
+    <br><br>
+    <h3>Nothing to Show</h3>
+  </ng-template>
+  <ng-template #notnull>
+    <ul class="list-group">
+      <li *ngFor="let item of retstatic(); let i=index"   class="list-group-item d-flex justify-content-between align-items-center"><span (click)="open(item[0])" style="cursor:pointer;" class="underline"><b style="font-size:large"><kbd>{{i+1}}</kbd>&nbsp;&nbsp;{{item[0]}}</b></span><span style="font-size:medium" class="badge badge-primary badge-pill">{{item[1]}}</span><span style="cursor:pointer;" (click)="download(item[0])" class="material-symbols-outlined">
+        download
+        </span></li>
+    </ul>
+  </ng-template>
+
+
+</div>

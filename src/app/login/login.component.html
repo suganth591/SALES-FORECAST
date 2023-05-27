@@ -1,0 +1,69 @@
+<div class="col-md-5 block" style="margin:auto;margin-top:10%;">
+  <div id="auth">
+  <div class="card">
+    <div class="card-header">
+      <a class="card-link" data-toggle="collapse" href="#collapseOne">
+        <b>Login</b>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse show" data-parent="#auth">
+      <div class="card-body">
+        <form class="needs-validate" novalidate>
+          <div class="form-group">
+            <label for="usr">Email:</label>
+            <input type="email" class="form-control" id="usr" placeholder="Email Address" [(ngModel)]="email" name="uemail" required>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Password" [(ngModel)]="pass" name="upass" required>
+            <div class="invalid-feedback">Please fill out this field.</div>
+          </div>
+          <button class="btn btn-primary" (click)="login()">Login</button>
+        </form>
+
+
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+          <b >Register</b>
+        </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#auth">
+        <div class="card-body">
+          <form class="was-validated">
+            <div class="row">
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="first-reg" placeholder="First Name" [(ngModel)]="r_first" name="rf" name="first" required>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            <div class="form-group col-md-6">
+              <input type="text" class="form-control" id="last-reg" placeholder="Last Name" [(ngModel)]="r_last" name="last" required>
+              <div class="invalid-feedback">Please fill out this field.</div>
+            </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="phone-reg" placeholder="Phone" [(ngModel)]="r_phone" minlength="10" maxlength="10" name="num" required>
+              <div class="invalid-feedback">Not a valid number</div>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="usr-reg" placeholder="Email Address" [(ngModel)]="r_email" name="email" required>
+              <div class="invalid-feedback">Incorrect Email</div>
+            </div>
+            <div class="form-group">
+              <input type="password" class="form-control" id="pwd-reg" placeholder="Password" [(ngModel)]="r_pass" name="pass" minlength="7" required>
+              <div class="invalid-feedback">Minimum 7 character required</div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary" (click)="register()">Register</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="container-fluid bg-light text-dark" style="position:block;max-height:500px;height:auto;color:gainsboro;overflow-y: scroll;">
+  <h1><b>Pending Works</b></h1>
+  <ng-container *ngIf="retstatic().length>0;then notnull;else empty"></ng-container>
+  <ng-template #empty>
+    <br><br>
+    <h3>Nothing to Show</h3><br><br>
+  </ng-template>
+  <ng-template #notnull>
+    <br><br>
+    <ul class="list-group">
+      <li *ngFor="let item of retstatic(); let i=index" class="list-group-item d-flex justify-content-between align-items-center"><b style="font-size:large"><kbd>{{i+1}}</kbd> &nbsp;&nbsp;{{item[0]}}</b><div class="spinner-border spinner-border-sm"></div><span>Created at : {{item[2]}}</span>
+
+        <span style="font-size:medium" class="badge badge-primary badge-pill">{{item[1]}} %</span></li>
+    </ul>
+  </ng-template>
+
+
+</div>
